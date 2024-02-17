@@ -1,0 +1,26 @@
+//首先要有function
+@import "bootstrap/scss/functions";
+// Required Bootstrap imports
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import 'bootstrap/scss/maps';
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/grid.scss";
+// 使用需要的components
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/navbar.scss";
+@import "bootstrap/scss/nav.scss";
+@import "bootstrap/scss/dropdown.scss";
+@import "bootstrap/scss/modal.scss"; 
+//引入utilities以及其api
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/utilities/api";
+
