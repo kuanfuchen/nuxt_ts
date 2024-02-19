@@ -10,7 +10,17 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="showModal">
       Launch demo modal
     </button>
-
+    <div class="mt-2">
+      <button type="button" class="ms-1 btn btn-outline-primary" @click="counter++"> 
+        ++counter
+      </button>
+      <button type="button" class="ms-3 btn btn-outline-warning" @click="counter--"> 
+        --counter
+      </button>
+      <button type="button" class="ms-3 btn btn-outline-danger" @click="clearCounter()">clear</button>
+      <div class="mt-2 mx-3">{{ counter }}</div>
+      <div class="mt-3">{{ color }}</div>
+    </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" 
     ref="modalRef">
       <div class="modal-dialog">
@@ -34,9 +44,15 @@
   </div>
 </template>
 <script setup>
-  // import { ref, onMounted } from 'vue';
   const { $bootstrap }  = useNuxtApp();
   const modalRef = ref(null);
+  const counter = useState('counter', () => Math.floor(Math.random()*1000) );
+  //useState取代ref
+  const color = useColor();
+  const clearCounter = () => {
+    // clearNuxtState('counter')
+    counter.value = 'string';//變更內容
+  }
   let modal;
   const showModal = () => {
     modal.show();
