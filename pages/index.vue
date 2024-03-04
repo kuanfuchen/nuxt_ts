@@ -7,6 +7,9 @@
     <div class="">
       <NuxtLink to="/homeView">homeview</NuxtLink>
     </div>
+    <div class="">
+      <NuxtLink to="/contact">contact</NuxtLink>
+    </div>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="showModal">
       Launch demo modal
     </button>
@@ -20,6 +23,10 @@
       <button type="button" class="ms-3 btn btn-outline-danger" @click="clearCounter()">clear</button>
       <div class="mt-2 mx-3">{{ counter }}</div>
       <div class="mt-3">{{ color }}</div>
+    </div>
+    <div class="">{{ useTile }}</div>
+    <div class="flex justify-center">
+      <Icon name="logos:nuxt" size="360" />
     </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" 
     ref="modalRef">
@@ -44,11 +51,12 @@
   </div>
 </template>
 <script setup>
-  const { $bootstrap }  = useNuxtApp();
+  const { $bootstrap,  $title  }  = useNuxtApp();
   const modalRef = ref(null);
   const counter = useState('counter', () => Math.floor(Math.random()*1000) );
-  //useState取代ref
+  //伺服器端傳來的資料要使用useState取代ref
   const color = useColor();
+  const useTile = $title;
   const clearCounter = () => {
     // clearNuxtState('counter')
     counter.value = 'string';//變更內容

@@ -7,7 +7,8 @@ export default defineNuxtPlugin(_nuxtApp =>{
       bootstrap:{
         modal: element => new Modal(element),
         collapse: element => new Collapse(element)
-      }
+      },
+      // title:(msg)=>`hello ${msg}`,
     }
   }
 })

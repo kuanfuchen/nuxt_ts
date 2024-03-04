@@ -6,5 +6,8 @@ export default defineNuxtConfig({
     plugins: {
       autoprefixer: true
     }
-  }
+  },
+  modules:['nuxt-icon',
+    
+  ],
 })

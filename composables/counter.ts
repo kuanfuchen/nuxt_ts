@@ -1,1 +1,1 @@
-export const useColor  =()=> useState('color' , () =>  'green')
+export const useColor  =()=> useState('color' , () =>  'green');
